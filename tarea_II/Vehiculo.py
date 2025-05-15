@@ -57,7 +57,7 @@ class Vehiculo(ABC):
     def get_es_electrico(self) -> bool:
         return self._es_electrico
     
-    def set_es_electrico(self, valor)-> None:
+    def set_es_electrico(self, valor: bool)-> None:
         self._es_electrico = bool(valor)
     
     def get_capacidad_pasajeros(self) -> int:
@@ -104,8 +104,8 @@ class Vehiculo(ABC):
         Returns:
             float: Costo calculado.
 
-        Raises: 
-            NotImplementedError: si se llama directamente a esta función.
+        Raises:
+            NotImplementedError: Si se llama directamente a esta función.
         """
        raise NotImplementedError("No se ha implementado una función virtual pura.")
     
@@ -117,8 +117,8 @@ class Vehiculo(ABC):
         Returns:
             bool: True si necesita inspección, False en caso contrario.
 
-        Raises: 
-            NotImplementedError: si se llama directamente a esta función.
+        Raises:
+            NotImplementedError: Si se llama directamente a esta función.
         """
        raise NotImplementedError("No se ha implementado una función virtual pura.")
     
@@ -129,8 +129,8 @@ class Vehiculo(ABC):
         
         Returns:
             dict: Diccionario con los datos del vehículo.
-
-        Raises: 
-            NotImplementedError: si se llama directamente a esta función.
+    
+        Raises:
+            NotImplementedError: Si se llama directamente a esta función.
         """
        raise NotImplementedError("No se ha implementado una función virtual pura.")
