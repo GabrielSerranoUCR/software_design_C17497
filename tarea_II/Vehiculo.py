@@ -78,6 +78,24 @@ class Vehiculo(ABC):
         """
         return self.__class__.__name__
     
+    def get_datos(self) -> dict:
+        """
+        Retorna un diccionario con los datos del vehículo.
+    
+        Returns:
+            dict: Diccionario con los datos del vehículo.
+        """
+        return {
+        "tipo": self.get_tipo(),
+        "color": self.color,
+        "peso": self.peso,
+        "ruedas": self.ruedas,
+        "es_electrico": self.es_electrico,
+        "capacidad_pasajeros": self.capacidad_pasajeros,
+        "costo": self.calcular_costo(),
+        "necesita_inspeccion": self.necesita_inspeccion()
+        }
+
     @abstractmethod
     def calcular_costo(self) -> float:
        """
