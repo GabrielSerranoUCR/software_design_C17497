@@ -65,10 +65,10 @@ class Vehiculo:
     def get_estado(self) -> str:
         return self._estado
     
-    def set_estado(self, valor):
+    def set_estado(self, valor) -> None:
         self._estado = valor
     
-    def get_tipo(self):
+    def get_tipo(self) -> str:
         """
         Obtiene el tipo de vehículo basado en el nombre de la clase.
         
