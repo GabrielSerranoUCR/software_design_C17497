@@ -1,4 +1,4 @@
-import ValidadorVehiculo
+from ValidadorVehiculo import ValidadorVehiculo
 from abc import ABC, abstractmethod
 class Vehiculo(ABC):
     """
@@ -87,14 +87,14 @@ class Vehiculo(ABC):
         """
         return {
         "tipo": self.get_tipo(),
-        "color": self.color,
-        "peso": self.peso,
-        "ruedas": self.ruedas,
-        "es_electrico": self.es_electrico,
-        "capacidad_pasajeros": self.capacidad_pasajeros,
+        "color": self.get_color(),
+        "peso": self.get_peso(),
+        "ruedas": self.get_ruedas(),
+        "es_electrico": self.get_es_electrico(),
+        "capacidad_pasajeros": self.get_capacidad_pasajeros(),
         "costo": self.calcular_costo(),
         "necesita_inspeccion": self.necesita_inspeccion()
-        }
+    }
 
     @abstractmethod
     def calcular_costo(self) -> float:
@@ -117,19 +117,6 @@ class Vehiculo(ABC):
         Returns:
             bool: True si necesita inspección, False en caso contrario.
 
-        Raises:
-            NotImplementedError: Si se llama directamente a esta función.
-        """
-       raise NotImplementedError("No se ha implementado una función virtual pura.")
-    
-    @abstractmethod
-    def get_datos(self) -> dict:
-       """
-        Retorna un diccionario con los datos del vehículo.
-        
-        Returns:
-            dict: Diccionario con los datos del vehículo.
-    
         Raises:
             NotImplementedError: Si se llama directamente a esta función.
         """
