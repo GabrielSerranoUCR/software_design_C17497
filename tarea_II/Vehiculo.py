@@ -1,5 +1,6 @@
 import ValidadorVehiculo
-class Vehiculo:
+from abc import ABC, abstractmethod
+class Vehiculo(ABC):
     """
     Clase base que representa un vehículo.
     
@@ -76,3 +77,42 @@ class Vehiculo:
             str: Nombre de la clase (tipo de vehículo).
         """
         return self.__class__.__name__
+    
+    @abstractmethod
+    def calcular_costo(self) -> float:
+       """
+        Calcula el costo de un automóvil.
+
+        Returns:
+            float: Costo calculado.
+
+        Raises: 
+            NotImplementedError: si se llama directamente a esta función.
+        """
+       raise NotImplementedError("No se ha implementado una función virtual pura.")
+    
+    @abstractmethod
+    def necesita_inspeccion(self) -> bool:
+       """
+        Determina si un auto necesita inspección.
+
+        Returns:
+            bool: True si necesita inspección, False en caso contrario.
+
+        Raises: 
+            NotImplementedError: si se llama directamente a esta función.
+        """
+       raise NotImplementedError("No se ha implementado una función virtual pura.")
+    
+    @abstractmethod
+    def get_datos(self) -> dict:
+       """
+        Retorna un diccionario con los datos del vehículo.
+        
+        Returns:
+            dict: Diccionario con los datos del vehículo.
+
+        Raises: 
+            NotImplementedError: si se llama directamente a esta función.
+        """
+       raise NotImplementedError("No se ha implementado una función virtual pura.")
